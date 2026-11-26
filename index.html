@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DataHub – Black Friday mobile data for Vodacom, MTN, Telkom and Cell C</title>
+<meta name="description" content="Buy 150GB for R100 or 300GB for R220 this Black Friday. Works on Vodacom, MTN, Telkom and Cell C. Pay by EFT or redeem a voucher.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpolygon points='16,2.5 28.5,9.3 28.5,22.7 16,29.5 3.5,22.7 3.5,9.3' fill='%2312d65c' stroke='%2312d65c' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M12 10h4.5a6 6 0 010 12H12z' fill='none' stroke='%23000' stroke-width='2.8' stroke-linejoin='round'/%3E%3Ccircle cx='26.5' cy='6' r='3.5' fill='%23ff2d3d' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#12d65c;--gd:#0a8f3f;--r:#ff2d3d;--bg:#000;--c:#0d0d0d;--c2:#161616;--b:#272727;--t:#f5f5f5;--m:#9b9b9b;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.55 "Bricolage Grotesque","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--t);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--g);outline-offset:2px}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+.top{background:var(--r);color:#fff;text-align:center;font-weight:600;font-size:14px;padding:9px 14px}
+header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--b)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:23px;letter-spacing:-.02em}
+.logo svg{width:38px;height:38px}
+.logo em{font-style:normal;color:var(--g)}
+.nav nav{display:flex;align-items:center;gap:26px;color:var(--m);font-weight:500}
+.nav nav a:hover{color:var(--t)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;background:var(--g);color:#000;font-weight:800;padding:13px 24px;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{background:#3fe583}
+.btn:active{transform:scale(.98)}
+.btn:disabled{background:#2a2a2a;color:#777;cursor:not-allowed;transform:none}
+.btn.red{background:var(--r);color:#fff}
+.btn.red:hover{background:#ff5562}
+.btn.sm{padding:9px 18px;font-size:15px}
+.btn.out{background:transparent;color:var(--t);border:1.5px solid var(--b)}
+.btn.out:hover{border-color:var(--g);background:transparent}
+.hero{padding:64px 0 72px;background:radial-gradient(700px 380px at 85% 10%,rgba(18,214,92,.17),transparent 70%),radial-gradient(500px 300px at 0% 100%,rgba(255,45,61,.13),transparent 70%)}
+.hg{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.02;font-weight:800;letter-spacing:-.035em}
+.hero p.lead{margin:20px 0 30px;color:#c9c9c9;font-size:19px;max-width:30em}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.tag{margin-top:34px;display:flex;flex-wrap:wrap;gap:8px 22px;color:var(--m);font-size:15px}
+.tag span::before{content:"✓ ";color:var(--g);font-weight:800}
+.ticket{background:var(--c);border:1px solid var(--b);border-radius:22px;padding:30px;position:relative;box-shadow:0 0 0 1px rgba(18,214,92,.15),0 30px 80px rgba(18,214,92,.1)}
+.ticket .sale{position:absolute;top:-14px;left:26px;background:var(--r);color:#fff;font-weight:800;font-size:14px;padding:5px 14px;border-radius:999px}
+.ticket .big{font-size:84px;font-weight:800;line-height:1;letter-spacing:-.05em;margin-top:8px}
+.ticket .big small{font-size:34px;color:var(--g)}
+.ticket .sp{color:var(--m);margin:6px 0 22px}
+.was{position:relative;display:inline-block;color:var(--m);font-size:30px;font-weight:600}
+.was::after{content:"";position:absolute;left:-4px;right:-4px;top:54%;height:3px;background:var(--r);transform-origin:left;animation:strike .7s .5s cubic-bezier(.7,0,.2,1) both}
+@keyframes strike{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.now{font-size:56px;font-weight:800;color:var(--g);letter-spacing:-.03em;margin-left:14px}
+.ticket hr{border:0;border-top:1px dashed var(--b);margin:22px 0}
+.ticket .row{display:flex;justify-content:space-between;color:#cfcfcf;font-weight:500}
+.ticket .row b{color:var(--g)}
+section{padding:72px 0}
+h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.03em;line-height:1.1;font-weight:800}
+.sub{color:var(--m);margin:10px 0 34px;max-width:36em}
+.order{background:var(--c);border:1px solid var(--b);border-radius:22px;padding:clamp(20px,4vw,38px)}
+.step{padding:0 0 28px;margin-bottom:28px;border-bottom:1px solid var(--b)}
+.step:last-of-type{border:0;margin:0;padding-bottom:10px}
+.step h3{display:flex;align-items:center;gap:12px;font-size:19px;margin-bottom:16px}
+.step h3 i{width:30px;height:30px;border-radius:50%;background:var(--g);color:#000;display:grid;place-items:center;font-style:normal;font-size:15px;font-weight:800}
+.nets{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.opt{position:relative;display:block;cursor:pointer}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.nv{display:flex;align-items:center;justify-content:center;gap:10px;height:62px;border:1.5px solid var(--b);border-radius:14px;background:var(--c2);font-weight:700;transition:.15s}
+.nv::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--d,#777)}
+.opt:hover .nv{border-color:#444}
+.opt input:checked+.nv,.opt input:checked+.pkc{border-color:var(--g);background:rgba(18,214,92,.09);box-shadow:0 0 0 1px var(--g)}
+.opt input:focus-visible+.nv,.opt input:focus-visible+.pkc{outline:3px solid var(--g);outline-offset:2px}
+input.tx{width:100%;max-width:380px;height:56px;padding:0 18px;border:1.5px solid var(--b);border-radius:14px;background:var(--c2);font-size:19px;letter-spacing:.04em}
+input.tx::placeholder{color:#666;letter-spacing:0}
+input.tx:focus{outline:0;border-color:var(--g)}
+.pks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pkc{height:100%;border:1.5px solid var(--b);border-radius:18px;background:var(--c2);padding:22px;transition:.15s;position:relative}
+.pkc .badge{position:absolute;top:16px;right:16px;background:var(--r);color:#fff;font-size:13px;font-weight:800;padding:3px 10px;border-radius:999px}
+.pkc h4{font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.pkc .s{color:var(--m);font-size:14.5px;margin:8px 0 16px}
+.pkc .p{display:flex;align-items:baseline;gap:12px}
+.pkc .p b{font-size:32px;color:var(--g);letter-spacing:-.03em}
+.pkc .p s{color:#777;font-size:19px;text-decoration-color:var(--r);text-decoration-thickness:2px}
+.err{color:#ff6b76;font-size:14.5px;min-height:20px;margin-top:8px;font-weight:500}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;padding-top:24px;border-top:1px solid var(--b)}
+.bar .tot{color:var(--m)}
+.bar .tot b{display:block;color:var(--t);font-size:28px;letter-spacing:-.02em}
+.bar .btn{min-width:200px;font-size:18px;padding:16px 28px}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hw{border-left:3px solid var(--g);padding:4px 0 4px 20px}
+.hw:nth-child(2){border-color:var(--r)}
+.hw h3{font-size:20px;margin-bottom:6px}
+.hw p{color:var(--m)}
+footer{border-top:1px solid var(--b);padding:34px 0;color:var(--m);font-size:14.5px}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+dialog{border:1px solid var(--b);background:var(--c);color:var(--t);border-radius:22px;padding:0;width:calc(100% - 28px);max-width:500px;margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.8);backdrop-filter:blur(4px)}
+dialog[open]{animation:pop .22s ease-out}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}}
+.in{padding:26px;max-height:90vh;overflow:auto}
+.in h3{font-size:24px;letter-spacing:-.02em;padding-right:36px}
+.x{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--b);background:var(--c2);cursor:pointer;font-size:18px}
+.x:hover{border-color:var(--r)}
+.sum{background:var(--c2);border:1px solid var(--b);border-radius:14px;padding:14px 16px;margin:16px 0;font-size:15px;color:#cfcfcf}
+.sum b{color:var(--g)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.tab{height:50px;border:1.5px solid var(--b);border-radius:12px;background:var(--c2);font-weight:700;cursor:pointer}
+.tab[aria-pressed=true]{border-color:var(--g);background:rgba(18,214,92,.1);color:var(--g)}
+.panel[hidden]{display:none}
+.bk{border:1px solid var(--b);border-radius:14px;overflow:hidden}
+.bk div{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 16px;border-bottom:1px solid var(--b)}
+.bk div:last-child{border:0}
+.bk span{color:var(--m);font-size:14px}
+.bk b{font-size:17px;margin-left:auto;letter-spacing:.02em}
+.cp{border:1px solid var(--b);background:var(--c2);border-radius:8px;padding:4px 10px;font-size:13px;cursor:pointer}
+.cp:hover{border-color:var(--g)}
+.note{color:var(--m);font-size:14px;margin-top:12px}
+.vt{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vt .nv{height:52px;font-size:15px}
+.vt .nv::before{display:none}
+#vbox{margin-top:16px}
+#vbox label{display:block;font-weight:600;margin-bottom:8px}
+#vcode{max-width:none;font-variant-numeric:tabular-nums;font-size:21px;letter-spacing:.08em}
+#vcode.ok{border-color:var(--g)}
+#vcode.bad{border-color:var(--r)}
+.msg{font-size:14.5px;margin-top:8px;color:var(--m);font-weight:500}
+.msg.ok{color:var(--g)}
+.msg.bad{color:#ff6b76}
+#go{width:100%;margin-top:20px;font-size:18px;padding:16px}
+.done{text-align:center;padding:36px 28px}
+.chk{width:84px;height:84px;margin:0 auto 18px}
+.chk circle{fill:none;stroke:var(--g);stroke-width:4;stroke-dasharray:252;stroke-dashoffset:252;animation:dr .6s .1s ease-out forwards}
+.chk path{fill:none;stroke:var(--g);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:dr .4s .6s ease-out forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.done h3{padding:0;font-size:28px}
+.done p{color:#cfcfcf;margin:10px 0 6px}
+.done .ref{display:inline-block;margin:10px 0 22px;padding:6px 14px;border:1px dashed var(--b);border-radius:10px;color:var(--m);font-size:14px}
+.done .ref b{color:var(--t)}
+@media(max-width:820px){.hg{grid-template-columns:1fr;gap:40px}.nets{grid-template-columns:1fr 1fr}.how{grid-template-columns:1fr}.nav nav a.l{display:none}}
+@media(max-width:560px){.pks{grid-template-columns:1fr}.hero{padding-top:44px}.bar .btn{width:100%}.ticket .big{font-size:68px}.now{font-size:46px}}
+@media(prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.01ms!important;animation-delay:0s!important;transition:none!important}html{scroll-behavior:auto}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lg{display:inline-flex;align-items:center;height:46px;padding:6px 12px;background:#fff;border-radius:12px}
+.lg svg,.nv svg{height:100%;width:auto;display:block}
+.nets .nv,.vt .nv{position:relative;background:#fff;border-color:#fff;padding:9px 12px;opacity:.82}
+.nets .nv{height:76px}
+.vt .nv{height:64px}
+.nets .nv::before,.vt .nv::before{display:none}
+.nets .opt:hover .nv,.vt .opt:hover .nv{opacity:1;border-color:#fff}
+.nets .opt input:checked+.nv,.vt .opt input:checked+.nv{background:#fff;opacity:1;border-color:var(--g);box-shadow:0 0 0 3px var(--g)}
+.opt input:checked+.nv::after{content:"✓";position:absolute;top:-9px;right:-9px;width:24px;height:24px;border-radius:50%;background:var(--g);color:#000;font-weight:800;font-size:14px;display:grid;place-items:center}
+.strip{background:var(--c);border-block:1px solid var(--b);padding:26px 0}
+.strip .w{display:grid;grid-template-columns:170px 1fr;gap:16px 28px;align-items:center}
+.strip p{color:var(--m);font-weight:500;font-size:15px}
+.logos{display:flex;flex-wrap:wrap;gap:10px}
+.logos .lg{height:44px}
+.faq{max-width:780px}
+details{border-bottom:1px solid var(--b)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font-weight:700;font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--g);font-size:26px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--m);padding:0 0 20px;max-width:40em}
+footer{padding:48px 0 30px;font-size:15px}
+.fw{max-width:1080px;margin:0 auto;padding:0 20px}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;padding-bottom:30px;border-bottom:1px solid var(--b)}
+.fg h4{color:var(--t);font-size:16px;margin-bottom:12px}
+.fg a,.fg span{display:block;margin-bottom:8px}
+.fg a:hover{color:var(--g)}
+.fd{margin-top:14px;max-width:26em}
+.fl{margin-top:22px;font-size:13.5px;max-width:60em}
+@media(max-width:700px){.strip .w{grid-template-columns:1fr}.fg{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top">Black Friday sale is live. 150GB for R100 and 300GB for R220 while stock lasts.</div>
+<header><div class="w nav">
+  <a class="logo" href="#top" aria-label="DataHub home"><svg viewBox="0 0 64 64" aria-hidden="true"><polygon points="32,5 57,18.5 57,45.5 32,59 7,45.5 7,18.5" fill="#12d65c" stroke="#12d65c" stroke-width="5" stroke-linejoin="round"/><path d="M24 20h9a12 12 0 010 24h-9z" fill="none" stroke="#000" stroke-width="5.5" stroke-linejoin="round"/><circle cx="53" cy="12" r="7" fill="#ff2d3d" stroke="#000" stroke-width="3"/></svg>Data<em>Hub</em></a>
+  <nav><a class="l" href="#how">How it works</a><a class="l" href="#faq">FAQ</a><a class="btn sm" href="#buy">Buy data</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="w hg">
+  <div>
+    <h1>Black Friday data at less than half price.</h1>
+    <p class="lead">Top up any Vodacom, MTN, Telkom or Cell C number with up to 300GB. Pay by EFT or redeem a voucher, and your data is credited within minutes.</p>
+    <div class="cta"><a class="btn" href="#buy">Buy data now</a><a class="btn out" href="#how">See how it works</a></div>
+    <div class="tag"><span>All South African networks</span><span>EFT or voucher</span><span>Anytime and Night Owl data</span></div>
+  </div>
+  <div class="ticket" aria-label="300GB deal">
+    <span class="sale">Save R259</span>
+    <div class="big">300<small>GB</small></div>
+    <p class="sp">150GB Anytime + 150GB Night Owl</p>
+    <span class="was">R479</span><span class="now">R220</span>
+    <hr>
+    <div class="row"><span>Or start smaller: 150GB</span><b>R100</b></div>
+  </div>
+</div></div>
+
+<div class="strip"><div class="w"><p>Top up on any network</p><div class="logos" id="sn"></div><p>Pay with a voucher</p><div class="logos" id="sv"></div></div></div>
+
+<section id="buy" style="padding-top:64px"><div class="w">
+  <h2>Get your data in three steps</h2>
+  <p class="sub">Choose a network, enter the number to top up and pick your bundle. You choose how to pay on the next screen.</p>
+  <form class="order" id="orderForm" novalidate>
+    <div class="step">
+      <h3><i>1</i>Choose your network</h3>
+      <div class="nets" role="radiogroup" aria-label="Network service provider">
+        <label class="opt"><input type="radio" name="net" value="Vodacom"><span class="nv" style="--d:#ff2d3d">Vodacom</span></label>
+        <label class="opt"><input type="radio" name="net" value="MTN"><span class="nv" style="--d:#ffcc00">MTN</span></label>
+        <label class="opt"><input type="radio" name="net" value="Telkom"><span class="nv" style="--d:#2f8cff">Telkom</span></label>
+        <label class="opt"><input type="radio" name="net" value="Cell C"><span class="nv" style="--d:#12d65c">Cell C</span></label>
+      </div>
+      <p class="err" id="e1"></p>
+    </div>
+    <div class="step">
+      <h3><i>2</i>Enter the mobile number</h3>
+      <input class="tx" id="num" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 0821234567" maxlength="16" aria-label="Mobile number">
+      <p class="err" id="e2"></p>
+    </div>
+    <div class="step">
+      <h3><i>3</i>Select your package</h3>
+      <div class="pks" role="radiogroup" aria-label="Data package">
+        <label class="opt"><input type="radio" name="pkg" value="p150"><span class="pkc"><span class="badge">56% off</span><h4>150GB</h4><p class="s">75GB Anytime + 75GB Night Owl</p><span class="p"><b>R100</b><s>R229</s></span></span></label>
+        <label class="opt"><input type="radio" name="pkg" value="p300"><span class="pkc"><span class="badge">54% off</span><h4>300GB</h4><p class="s">150GB Anytime + 150GB Night Owl</p><span class="p"><b>R220</b><s>R479</s></span></span></label>
+      </div>
+      <p class="err" id="e3"></p>
+    </div>
+    <div class="bar">
+      <div class="tot">Total to pay<b id="tot">R0</b></div>
+      <button class="btn" type="submit">Buy data</button>
+    </div>
+  </form>
+</div></section>
+
+<section id="how" style="border-top:1px solid var(--b)"><div class="w">
+  <h2>Simple from start to finish</h2>
+  <p class="sub">No account and no sign-up. Order in under a minute.</p>
+  <div class="how">
+    <div class="hw"><h3>Order</h3><p>Pick your network, number and bundle, then press Buy data.</p></div>
+    <div class="hw"><h3>Pay</h3><p>Deposit by EFT using the bank details shown, or redeem an OTT, 1Voucher, BluVoucher or AnyTime voucher.</p></div>
+    <div class="hw"><h3>Receive</h3><p>We verify your payment and credit the data to your number within a few minutes.</p></div>
+  </div>
+</div></section>
+<section id="faq" style="border-top:1px solid var(--b)"><div class="w faq">
+  <h2>Common questions</h2>
+  <p class="sub">Quick answers before you buy.</p>
+  <details><summary>How long until my data arrives?</summary><p>Your data is credited within a few minutes of us receiving your order and payment.</p></details>
+  <details><summary>Which networks do you support?</summary><p>Vodacom, MTN, Telkom and Cell C. Choose the network the number belongs to, because data is credited to that network.</p></details>
+  <details><summary>How can I pay?</summary><p>Pay by EFT deposit to the bank account shown at checkout, or redeem an OTT, 1Voucher, BluVoucher or AnyTime voucher.</p></details>
+  <details><summary>What are Anytime and Night Owl data?</summary><p>Each bundle is split in two. Anytime data can be used at any time of day, and Night Owl data is for off-peak night-time hours.</p></details>
+  <details><summary>Can I top up someone else’s number?</summary><p>Yes. Enter their number and network at checkout. Check both carefully, because we credit exactly what you enter.</p></details>
+</div></section>
+</main>
+
+<footer><div class="fw"><div class="fg"><div><a class="logo" href="#top" aria-label="DataHub home"><svg viewBox="0 0 64 64" aria-hidden="true"><polygon points="32,5 57,18.5 57,45.5 32,59 7,45.5 7,18.5" fill="#12d65c" stroke="#12d65c" stroke-width="5" stroke-linejoin="round"/><path d="M24 20h9a12 12 0 010 24h-9z" fill="none" stroke="#000" stroke-width="5.5" stroke-linejoin="round"/><circle cx="53" cy="12" r="7" fill="#ff2d3d" stroke="#000" stroke-width="3"/></svg>Data<em>Hub</em></a><p class="fd">Affordable mobile data for every major South African network.</p></div><div><h4>Explore</h4><a href="#buy">Buy data</a><a href="#how">How it works</a><a href="#faq">FAQ</a></div><div><h4>Payment options</h4><span>EFT deposit</span><span>OTT, 1Voucher, BluVoucher, AnyTime</span></div></div><p class="fl">© <span id="yr">2026</span> DataHub. All prices are in South African rand. Network and voucher names and logos belong to their respective owners and are shown only to indicate compatibility.</p></div></footer>
+
+<dialog id="payDlg" aria-labelledby="payT"><div class="in" style="position:relative">
+  <button class="x" type="button" id="payX" aria-label="Close">✕</button>
+  <h3 id="payT">How would you like to pay?</h3>
+  <div class="sum" id="sum"></div>
+  <div class="tabs">
+    <button class="tab" type="button" data-m="EFT" aria-pressed="false">EFT deposit</button>
+    <button class="tab" type="button" data-m="Voucher" aria-pressed="false">Redeem voucher</button>
+  </div>
+  <div class="panel" id="pEFT" hidden>
+    <div class="bk">
+      <div><span>Bank</span><b>Capitec</b><button class="cp" type="button" data-c="Capitec">Copy</button></div>
+      <div><span>Account holder</span><b>Mr Sibiya</b><button class="cp" type="button" data-c="Mr Sibiya">Copy</button></div>
+      <div><span>Account number</span><b>2629391058</b><button class="cp" type="button" data-c="2629391058">Copy</button></div>
+      <div><span>Amount</span><b id="eAmt"></b><button class="cp" type="button" id="cAmt">Copy</button></div>
+      <div><span>Reference</span><b id="eRef"></b><button class="cp" type="button" id="cRef">Copy</button></div>
+    </div>
+    <p class="note">Deposit the exact amount, use your mobile number as the reference, then press Complete purchase.</p>
+  </div>
+  <div class="panel" id="pVou" hidden>
+    <div class="vt" role="radiogroup" aria-label="Voucher type" id="vt"></div>
+    <div id="vbox" hidden>
+      <label for="vcode" id="vlab">Voucher code</label>
+      <input class="tx" id="vcode" autocomplete="off" spellcheck="false" placeholder="Enter your voucher code">
+      <p class="msg" id="vmsg"></p>
+    </div>
+  </div>
+  <p class="err" id="perr" role="alert"></p>
+  <button class="btn" type="button" id="go" disabled>Complete purchase</button>
+</div></dialog>
+
+<dialog id="doneDlg" aria-labelledby="doneT"><div class="in done">
+  <svg class="chk" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="40"/><path d="M25 43l12 12 23-26"/></svg>
+  <h3 id="doneT">Order received</h3>
+  <p>Your data will be credited in a few minutes.</p>
+  <span class="ref">Order reference <b id="ref"></b></span><br>
+  <button class="btn" type="button" id="doneX">Done</button>
+</div></dialog>
+
+<script>
+const EMAIL='sandilemkhonto972@gmail.com';
+const PKGS={p150:{gb:'150GB',split:'75GB Anytime + 75GB Night Owl',now:100,was:229},p300:{gb:'300GB',split:'150GB Anytime + 150GB Night Owl',now:220,was:479}};
+const S=(n,b)=>`<svg viewBox="0 0 120 40" role="img" aria-label="${n}">${b}</svg>`,T='text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="800"';
+// Brand-style logo tiles. To use official artwork, replace any entry with an <img> tag pointing at the logo file.
+const LOGO={
+'Vodacom':S('Vodacom','<circle cx="19" cy="20" r="14" fill="#e60000"/><text x="19" y="29" text-anchor="middle" font-family="Georgia,serif" font-size="26" font-weight="700" fill="#fff">”</text><text x="38" y="26" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#222">vodacom</text>'),
+'MTN':S('MTN',`<ellipse cx="60" cy="20" rx="44" ry="16" fill="#ffcb05"/><text x="60" y="28" ${T} font-size="22" fill="#000">MTN</text>`),
+'Telkom':S('Telkom',`<text x="60" y="27" ${T} font-size="23" fill="#0a9bd8">telkom</text>`),
+'Cell C':S('Cell C',`<text x="60" y="27" ${T} font-size="23" fill="#111">cell<tspan fill="#7ac143"> c</tspan></text>`),
+'OTT':S('OTT',`<rect x="22" y="7" width="76" height="26" rx="7" fill="#ff6b00"/><text x="60" y="27" ${T} font-size="19" fill="#fff">OTT</text>`),
+'1Voucher':S('1Voucher',`<circle cx="20" cy="20" r="13" fill="#1f4fd8"/><text x="20" y="27" ${T} font-size="19" fill="#fff">1</text><text x="38" y="26" font-family="Arial,sans-serif" font-size="16" font-weight="800" fill="#1f4fd8">Voucher</text>`),
+'BluVoucher':S('BluVoucher',`<text x="60" y="26" ${T} font-size="16" fill="#0a58ff">blu<tspan fill="#111">voucher</tspan></text>`),
+'AnyTime':S('AnyTime',`<text x="60" y="27" ${T} font-size="21" fill="#111">any<tspan fill="#8a2be2">time</tspan></text>`)
+};
+const NETS=['Vodacom','MTN','Telkom','Cell C'],VOUCH=['OTT','1Voucher','BluVoucher','AnyTime'];
+const $=s=>document.querySelector(s),st={method:null,vtype:null,vok:false,vcode:''};
+const pay=$('#payDlg'),done=$('#doneDlg'),go=$('#go');
+$('#yr').textContent=new Date().getFullYear();
+
+const norm=v=>{v=v.replace(/[\s\-()]/g,'');if(v.startsWith('+27'))v='0'+v.slice(3);else if(/^27\d{9}$/.test(v))v='0'+v.slice(2);return v};
+const okNum=v=>/^0[6-8]\d{8}$/.test(v);
+const val=n=>(document.querySelector('[name='+n+']:checked')||{}).value;
+
+document.addEventListener('change',e=>{if(e.target.name==='pkg'){$('#tot').textContent='R'+PKGS[e.target.value].now;$('#e3').textContent=''}if(e.target.name==='net')$('#e1').textContent=''});
+$('#num').addEventListener('input',()=>$('#e2').textContent='');
+
+$('#orderForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const net=val('net'),pkg=val('pkg'),num=norm($('#num').value);let bad=false;
+  $('#e1').textContent=net?'':(bad=true,'Choose a network to continue.');
+  $('#e2').textContent=okNum(num)?'':(bad=true,'Enter a valid 10-digit South African mobile number, like 0821234567.');
+  $('#e3').textContent=pkg?'':(bad=true,'Select a package to continue.');
+  if(bad){const f=document.querySelector('.err:not(:empty)');f&&f.scrollIntoView({block:'center',behavior:'smooth'});return}
+  Object.assign(st,{net,pkg,num,method:null,vtype:null,vok:false,vcode:''});
+  const p=PKGS[pkg];
+  $('#sum').innerHTML='<b></b> '; const b=$('#sum b');b.textContent=p.gb+' for R'+p.now;
+  $('#sum').append(' on '+net+' to '+num);
+  $('#eAmt').textContent='R'+p.now;$('#eRef').textContent=num;
+  document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-pressed','false'));
+  $('#pEFT').hidden=$('#pVou').hidden=$('#vbox').hidden=true;
+  $('#vcode').value='';$('#vmsg').textContent='';$('#vcode').className='tx';$('#perr').textContent='';
+  document.querySelectorAll('#vt input').forEach(i=>i.checked=false);
+  refresh();pay.showModal();
+});
+
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  st.method=t.dataset.m;
+  document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-pressed',x===t));
+  $('#pEFT').hidden=st.method!=='EFT';$('#pVou').hidden=st.method!=='Voucher';
+  $('#perr').textContent='';refresh();
+}));
+
+document.querySelectorAll('[name=net]').forEach(i=>{i.nextElementSibling.innerHTML=LOGO[i.value]+'<span class="sr">'+i.value+'</span>'});
+$('#sn').innerHTML=NETS.map(n=>'<span class="lg">'+LOGO[n]+'</span>').join('');
+$('#sv').innerHTML=VOUCH.map(n=>'<span class="lg">'+LOGO[n]+'</span>').join('');
+$('#vt').innerHTML=VOUCH.map(k=>'<label class="opt"><input type="radio" name="vtype" value="'+k+'"><span class="nv">'+LOGO[k]+'<span class="sr">'+k+'</span></span></label>').join('');
+$('#vt').addEventListener('change',e=>{
+  st.vtype=e.target.value;st.vcode='';st.vok=false;$('#vbox').hidden=false;
+  $('#vlab').textContent='Enter your '+st.vtype+' code';$('#vcode').value='';$('#vmsg').textContent='';refresh();$('#vcode').focus();
+});
+$('#vcode').addEventListener('input',e=>{st.vcode=e.target.value.trim();st.vok=st.vcode.length>0;refresh()});
+function refresh(){go.disabled=!(st.method==='EFT'||(st.method==='Voucher'&&st.vok))}
+
+pay.addEventListener('click',e=>{
+  const c=e.target.closest('.cp');
+  if(c){const v=c.id==='cAmt'?$('#eAmt').textContent:c.id==='cRef'?$('#eRef').textContent:c.dataset.c;
+    (navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).catch(()=>{}).finally(()=>{c.textContent='Copied';setTimeout(()=>c.textContent='Copy',1500)})}
+  if(e.target===pay)pay.close();
+});
+$('#payX').onclick=()=>pay.close();
+$('#doneX').onclick=()=>done.close();
+
+go.addEventListener('click',async()=>{
+  const p=PKGS[st.pkg],ref='DH-'+Date.now().toString(36).slice(-5).toUpperCase()+Math.random().toString(36).slice(2,4).toUpperCase();
+  const data={_subject:'DataHub order '+ref+': '+p.gb+' '+st.net,_template:'table',_captcha:'false',_honey:'',
+    'Order reference':ref,'Network':st.net,'Mobile number':st.num,'Package':p.gb+' ('+p.split+')','Amount':'R'+p.now,
+    'Payment method':st.method==='EFT'?'EFT':'Voucher','Voucher type':st.method==='Voucher'?st.vtype:'n/a','Voucher code':st.method==='Voucher'?st.vcode:'n/a',
+    'Placed at':new Date().toLocaleString('en-ZA')};
+  go.disabled=true;go.textContent='Sending your order…';$('#perr').textContent='';
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/'+EMAIL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok||j.success==='false')throw new Error('send');
+    $('#ref').textContent=ref;pay.close();done.showModal();
+    $('#orderForm').reset();$('#tot').textContent='R0';
+  }catch(_){
+    $('#perr').textContent='We couldn’t send your order. Check your connection and press Complete purchase again.';
+  }
+  go.textContent='Complete purchase';refresh();
+});
+done.addEventListener('click',e=>{if(e.target===done)done.close()});
+</script>
+</body>
+</html>
